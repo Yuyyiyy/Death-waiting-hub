@@ -3,7 +3,7 @@ local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 
 local testUsers = {
-    "THEDARKLORD_ofdeath", "xdemon123679", "test 3", "psychopowerful049", "psychopowerful90",
+    "THEDARKLORD_ofdeath", "Xdemon123679", "thedarklord", "psychopowerful049", "psychopowerful90",
     "Test 6", "Test7", "Test8", "Test9", "Test10",
     "Test11", "Test12", "Test13", "Test14", "Test15",
     "testUser16", "testUser17", "testUser18", "testUser19", "testUser20",
@@ -39,9 +39,11 @@ local buttonsPagesData = {
     {Text = "DAMAGE HITBOX", ScriptLink = "https://pastebin.com/raw/n4Qxm4jF"},
     {Text = "AURA", ScriptLink = "https://pastebin.com/raw/qZPVbxFc"},
     {Text = "ANTI MOVEMENT", ScriptLink = "https://pastebin.com/raw/1Ms8UVsR"},
-    {Text = "NO COOLDOWN", ScriptLink = "https://pastebin.com/raw/hzQMeKi8"},
+    {Text = "NO COOLDOWN", ScriptLink = "https://pastebin.com/raw/S2EgAmWE"},
     {Text = "LAG SERVER", ScriptLink = "https://gist.githubusercontent.com/Yuyyiyy/6f38723afc3d835dc1f8bc96b9f61bd8/raw/9d7b2525de18a7f1220d5c78fcfdf34b7da5e05f"},
     {Text = "FPS", ScriptLink = "https://pastebin.com/raw/TJTb4nmD"},
+    {Text = "LAG NO COOLDOWN", ScriptLink = "https://pastebin.com/raw/75vY7GYx"}, -- 13th button
+    {Text = "THROW POWERS", ScriptLink = "https://pastebin.com/raw/uaHva1UX"}     -- 14th button
 }
 
 local TweenService = game:GetService("TweenService")
@@ -66,7 +68,6 @@ bgGradient.Color = ColorSequence.new{
 }
 bgGradient.Rotation = 90
 
--- Animate gradient rotation for eerie effect
 task.spawn(function()
     while true do
         bgGradient.Rotation = (bgGradient.Rotation + 0.5) % 360
@@ -74,7 +75,6 @@ task.spawn(function()
     end
 end)
 
--- Vignette overlay for extra darkness
 local vignette = Instance.new("ImageLabel", screenGui)
 vignette.BackgroundTransparency = 1
 vignette.Size = UDim2.new(1,0,1,0)
@@ -84,19 +84,16 @@ vignette.ImageColor3 = Color3.fromRGB(80,0,0)
 vignette.ZIndex = 100
 vignette.Visible = false
 
--- Toggle vignette with GUI
 local function toggleVignette()
     vignette.Visible = not vignette.Visible
 end
 
--- 🔥 Shadow Overlay
 local shadow = Instance.new("Frame", screenGui)
 shadow.Size = UDim2.new(1,0,1,0)
 shadow.BackgroundColor3 = Color3.fromRGB(0,0,0)
 shadow.BackgroundTransparency = 0.5
 shadow.ZIndex = 1
 
--- 🎮 Main Frames
 local mainFrame = Instance.new("Frame", screenGui)
 mainFrame.Size = UDim2.new(0.6, 0, 0.6, 0)
 mainFrame.Position = UDim2.new(0.2, 0, 0.2, 0)
@@ -120,7 +117,6 @@ stroke.Color = Color3.fromRGB(255, 0, 0)
 stroke.Thickness = 2
 stroke.Transparency = 0.1
 
--- Flickering Red Glow
 task.spawn(function()
     while true do
         TweenService:Create(main, TweenInfo.new(0.2), {BackgroundColor3 = Color3.fromRGB(30 + math.random(0,20),0,0)}):Play()
@@ -130,7 +126,6 @@ task.spawn(function()
     end
 end)
 
--- 🔥 Toggle Button
 local toggleButton = Instance.new("ImageButton", screenGui)
 toggleButton.Name = "ReaperToggle"
 toggleButton.Size = UDim2.new(0, 50, 0, 50)
@@ -147,7 +142,6 @@ iconGlow.Color = Color3.fromRGB(255, 0, 0)
 iconGlow.Thickness = 4
 iconGlow.Transparency = 0.1
 
--- Pulsing toggle button effect
 task.spawn(function()
     while true do
         local pulse = math.sin(tick() * 5) * 0.4 + 0.6
@@ -166,7 +160,6 @@ gradientToggle.Color = ColorSequence.new{
 }
 gradientToggle.Rotation = 45
 
--- 💀 Center Icon
 local centerIcon = Instance.new("TextLabel", toggleButton)
 centerIcon.Size = UDim2.new(0, 30, 0, 30)
 centerIcon.Position = UDim2.new(0.5, -15, 0.5, -15)
@@ -179,7 +172,6 @@ centerIcon.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
 centerIcon.TextStrokeTransparency = 0.1
 centerIcon.ZIndex = 11
 
--- Floating skull effect
 task.spawn(function()
     while true do
         centerIcon.Position = centerIcon.Position + UDim2.new(0, 0, 0, math.sin(tick() * 3) * 1)
@@ -188,7 +180,6 @@ task.spawn(function()
     end
 end)
 
--- 🩸 Toggle Label
 local toggleLabel = Instance.new("TextLabel", screenGui)
 toggleLabel.Text = "ENTER THE VOID"
 toggleLabel.Font = Enum.Font.Creepster
@@ -201,7 +192,6 @@ toggleLabel.Size = UDim2.new(0, 100, 0, 16)
 toggleLabel.Position = UDim2.new(1, -120, 0, 80)
 toggleLabel.ZIndex = 10
 
--- Flickering text effect
 task.spawn(function()
     while true do
         toggleLabel.TextTransparency = math.random() * 0.3
@@ -209,7 +199,6 @@ task.spawn(function()
     end
 end)
 
--- 🔄 Toggle Logic
 local isVisible = false
 toggleButton.MouseButton1Click:Connect(function()
     isVisible = not isVisible
@@ -220,7 +209,6 @@ toggleButton.MouseButton1Click:Connect(function()
     toggleLabel.Text = isVisible and "CLOSE THE PORTAL" or "ENTER THE VOID"
     centerIcon.Text = isVisible and "💀" or "⚰️"
     toggleVignette()
-    -- Screen shake effect
     if isVisible then
         for i = 1, 10 do
             screenGui.Position = UDim2.new(0, math.random(-2, 2), 0, math.random(-2, 2))
@@ -230,7 +218,6 @@ toggleButton.MouseButton1Click:Connect(function()
     end
 end)
 
--- ☠ Title for main - ☠ REAPER'S TOLL ☠ with color cycling
 local title = Instance.new("TextLabel", main)
 title.Text = "☠ REAPER'S TOLL ☠"
 title.Font = Enum.Font.Creepster
@@ -243,13 +230,12 @@ title.Size = UDim2.new(1, 0, 0.12, 0)
 title.Position = UDim2.new(0, 0, 0.02, 0)
 title.ZIndex = 3
 
--- Floating and color-changing title effect
 local horrorColors = {
-    Color3.fromRGB(255,0,0),   -- Blood red
-    Color3.fromRGB(80,0,0),    -- Dark maroon
-    Color3.fromRGB(60,0,20),   -- Black cherry
-    Color3.fromRGB(255,50,50), -- Bright red
-    Color3.fromRGB(30,0,0)     -- Almost black
+    Color3.fromRGB(255,0,0),
+    Color3.fromRGB(80,0,0),
+    Color3.fromRGB(60,0,20),
+    Color3.fromRGB(255,50,50),
+    Color3.fromRGB(30,0,0)
 }
 task.spawn(function()
     local idx = 1
@@ -262,7 +248,6 @@ task.spawn(function()
     end
 end)
 
--- Blood Drips at top of Main
 for i=1,6 do
     local drip = Instance.new("Frame", main)
     drip.Size = UDim2.new(0, math.random(8,18), 0, math.random(30,60))
@@ -282,7 +267,6 @@ for i=1,6 do
     end)
 end
 
--- ⚰️ Coffin Icon
 local coffin = Instance.new("ImageLabel", main)
 coffin.Image = "rbxassetid://16175531538"
 coffin.Size = UDim2.new(0, 80, 0, 80)
@@ -290,7 +274,6 @@ coffin.Position = UDim2.new(0.5, -40, 0.2, 0)
 coffin.BackgroundTransparency = 1
 coffin.ZIndex = 3
 
--- 💀 Floating DEATH Labels
 local function createFloatingDeath(offset)
     local death = Instance.new("TextLabel")
     death.Text = "DEATH"
@@ -321,7 +304,6 @@ createFloatingDeath(-80)
 createFloatingDeath(0)
 createFloatingDeath(80)
 
--- 🔴 Blood Rain - Everywhere Effect
 for i = 1, 60 do
     local drop = Instance.new("Frame")
     drop.Size = UDim2.new(0, math.random(1, 3), 0, math.random(10, 20))
@@ -340,7 +322,6 @@ for i = 1, 60 do
     end)
 end
 
--- 💀 Floating Background Words & Ghost Faces (not in GUI)
 local floatingWords = {
     "YOU CAN'T ESCAPE", "IT'S OVER", "BLOOD", "RUN", "👁️", "👹", "DIE", 
     "THE END", "NO HOPE", "HELP", "☠️", "👻", "😱", "SILENCE", "BEHIND YOU"
@@ -374,7 +355,6 @@ for _, word in ipairs(floatingWords) do
     end
 end
 
--- 🕹️ Script Buttons Section (Scrollable!)
 local buttonsFrame = Instance.new("ScrollingFrame", main)
 buttonsFrame.Name = "ScriptButtonsFrame"
 buttonsFrame.Size = UDim2.new(1, -40, 0.28, 0)
@@ -422,7 +402,6 @@ for i, data in ipairs(buttonsPagesData) do
         end
     end)
 
-    -- Flicker effect for buttons
     task.spawn(function()
         while true do
             btn.BackgroundColor3 = Color3.fromRGB(40+math.random(0,30),0,0)
