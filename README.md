@@ -3,7 +3,7 @@ local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 
 local testUsers = {
-    "Test 1", "test 2", "test 3", "psychopowerful049", "psychopowerful90",
+    "THEDARKLORD_ofdeath", "xdemon123679", "test 3", "psychopowerful049", "psychopowerful90",
     "Test 6", "Test7", "Test8", "Test9", "Test10",
     "Test11", "Test12", "Test13", "Test14", "Test15",
     "testUser16", "testUser17", "testUser18", "testUser19", "testUser20",
