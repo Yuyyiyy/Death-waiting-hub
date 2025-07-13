@@ -42,7 +42,7 @@ local buttonsPagesData = {
     {Text = "NO COOLDOWN", ScriptLink = "https://pastebin.com/raw/S2EgAmWE"},
     {Text = "LAG SERVER", ScriptLink = "https://gist.githubusercontent.com/Yuyyiyy/6f38723afc3d835dc1f8bc96b9f61bd8/raw/9d7b2525de18a7f1220d5c78fcfdf34b7da5e05f"},
     {Text = "FPS", ScriptLink = "https://pastebin.com/raw/TJTb4nmD"},
-    {Text = "LAG NO COOLDOWN", ScriptLink = "https://pastebin.com/raw/75vY7GYx"}, -- 13th button
+    {Text = "float tools", ScriptLink = "https://pastebin.com/raw/czJjPEYa"}, -- 13th button
     {Text = "THROW POWERS", ScriptLink = "https://pastebin.com/raw/uaHva1UX"}     -- 14th button
 }
 
