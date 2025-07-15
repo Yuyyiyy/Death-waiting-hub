@@ -35,14 +35,14 @@ local buttonsPagesData = {
     {Text = "AUTO GRAB", ScriptLink = "https://gist.githubusercontent.com/Yuyyiyy/eb3b21915928414653a2b8dd9a40980e/raw/782a51c0004924e47d86c0c008acd280e5af16c3"},
     {Text = "SPT AUTOGRAB", ScriptLink = "https://pastebin.com/raw/MHN7tVU8"},
     {Text = "USETOOLS", ScriptLink = "https://pastebin.com/raw/HQdjVm7g"},
-    {Text = "LOOPBRING", ScriptLink = "https://pastebin.com/raw/fsK76uNm"},
-    {Text = "DAMAGE HITBOX", ScriptLink = "https://pastebin.com/raw/n4Qxm4jF"},
-    {Text = "AURA", ScriptLink = "https://pastebin.com/raw/qZPVbxFc"},
-    {Text = "ANTI MOVEMENT", ScriptLink = "https://pastebin.com/raw/1Ms8UVsR"},
-    {Text = "NO COOLDOWN", ScriptLink = "https://pastebin.com/PjDUPDm2"},
+    {Text = "LOOPBRING", ScriptLink = ""},
+    {Text = "DAMAGE HITBOX", ScriptLink = ""},
+    {Text = "AURA", ScriptLink = ""},
+    {Text = "ANTI MOVEMENT", ScriptLink = ""},
+    {Text = "", ScriptLink = ""},
     {Text = "LAG SERVER", ScriptLink = "https://gist.githubusercontent.com/Yuyyiyy/6f38723afc3d835dc1f8bc96b9f61bd8/raw/9d7b2525de18a7f1220d5c78fcfdf34b7da5e05f"},
     {Text = "FPS", ScriptLink = "https://pastebin.com/raw/TJTb4nmD"},
-    {Text = "float tools", ScriptLink = "https://pastebin.com/raw/czJjPEYa"}, -- 13th button
+    {Text = "float tools", ScriptLink = ""}, -- 13th button
     {Text = "THROW POWERS", ScriptLink = "https://pastebin.com/raw/uaHva1UX"}     -- 14th button
 }
 
